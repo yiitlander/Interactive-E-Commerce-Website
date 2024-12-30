@@ -37,7 +37,7 @@ nav ul {
     flex-wrap: wrap; 
 }
 
-#shop, #about, #contact #wishlist {
+#shop, #about, #contact, #wishlist {
     margin-right: 3rem;
 }
 
