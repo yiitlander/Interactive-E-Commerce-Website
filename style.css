@@ -10,6 +10,7 @@ body {
 header {
     background-color: #333;
     color: white;
+    padding: 10px 20px;
 }
 .about-header{
     margin-top: 5rem;
@@ -29,12 +30,13 @@ header {
 
 nav ul {
     list-style: none;
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0;
 }
 
 #shop, #about, #contact, #wishlist {
@@ -43,13 +45,16 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 5px;
+    margin: 0 15px;
+    padding: 5px 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
+    padding: 5px 0;
 }
 
 nav ul li a:hover{
@@ -429,14 +434,13 @@ footer {
     }
 
     nav ul {
-        flex-direction: column; 
-
+        flex-direction: column;
+        align-items: flex-start; 
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 0; 
     }
-
     .right-section {
         float: left;
     }
@@ -463,10 +467,11 @@ footer {
 
     nav ul {
         flex-direction: column;
+        align-items: flex-start; 
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 }
 
@@ -514,6 +519,9 @@ footer {
     .account {
         width: 30px;
         margin-left: 20px;
+    }
+    nav ul li {
+        margin: 0 8px; 
     }
 }
 
