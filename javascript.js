@@ -282,7 +282,7 @@ searchInput.addEventListener("focus", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-button");
-    const products = document.querySelectorAll(".container .col-lg-3");
+    const products = document.querySelectorAll(".container .col-lg-4");
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -306,4 +306,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const wishlistButtons = document.querySelectorAll('.wishlist-button');
+    const loadWishlist = () => JSON.parse(localStorage.getItem('wishlist')) || [];
+    const saveWishlist = (wishlist) => localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    const updateButtonState = (button, isFavorited) => {
+        button.textContent = isFavorited ? 'Remove from Wishlist' : 'Add to Wishlist';
+        button.classList.toggle('btn-danger', isFavorited);
+        button.classList.toggle('btn-warning', !isFavorited);
+    };
+
+    wishlistButtons.forEach(button => {
+        const product = {
+            id: button.dataset.productId,
+            name: button.dataset.productName,
+            price: button.dataset.productPrice,
+            img: button.dataset.productImg
+        };
+
+        
+        const wishlist = loadWishlist();
+        const isFavorited = wishlist.some(item => item.id === product.id);
+        updateButtonState(button, isFavorited);
+
+        button.addEventListener('click', () => {
+            let wishlist = loadWishlist();
+            const isFavorited = wishlist.some(item => item.id === product.id);
+
+            if (isFavorited) {
+                
+                wishlist = wishlist.filter(item => item.id !== product.id);
+                alert(`${product.name} has been removed from your wishlist.`);
+            } else {
+                
+                wishlist.push(product);
+                alert(`${product.name} has been added to your wishlist!`);
+            }
+
+            saveWishlist(wishlist);
+            updateButtonState(button, !isFavorited);
+        });
+    });
+});
+
 

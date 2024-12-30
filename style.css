@@ -29,7 +29,7 @@ header {
 
 nav ul {
     list-style: none;
-    padding: 100;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,13 +37,13 @@ nav ul {
     flex-wrap: wrap; 
 }
 
-#shop, #about, #contact {
-    margin-right: 12rem;
+#shop, #about, #contact #wishlist {
+    margin-right: 3rem;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
 }
 
 nav ul li a {
