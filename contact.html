@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distopia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="contact-style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><img src="sources/WhatsApp_Image_2024-12-29_at_2.15.23_AM-removebg-preview.png"
+                        class="logo" alt="logo"></a>
+                        <li> <div class="search-box">
+                            <input type="text" id="search-input" class="search-input" placeholder="Enter keyword or product name...">
+                            <button class="search-button" id="search-button"><img src="sources/search.png" alt=""></button>
+                        </div>
+                        <div id="search-results" class="search-results"></div></li>
+                <li><a href="shop.html" id="shop">Shop</a></li>
+                <li><a href="about.html" id="about">About </a></li>
+                <li><a href="contact.html" id="contact">Contact</a></li>
+                <li class="right-section">
+                    <div class="shopping-cart position-relative">
+                        <button type="button" class="btn-cart btn btn-primary position-relative" id="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="item-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-2">0</span>
+                        </button>
+                        <div class="shopping-cart-list bg-primary d-none" id="cart-list">
+                            <a href="shoppingCart.html"><b class="fs-5 text-white my-3 badge bg-warning">Shopping
+                                    Cart</b></a>
+                        </div>
+                    </div>
+
+
+                    <a href="login.html"><img src="sources/account.png" class="account" alt="account"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="section">
+        <div class="contact-form">
+            <h1>Send Email</h1>
+            Sender Name
+            <input type="text" id="sendername" placeholder="Name"><br>
+            To (Email)
+            <input type="text" id="to" placeholder="Receiver's Email"><br>
+            Subject
+            <input type="text" id="subject" placeholder="Subject"><br>
+            Reply To (Email)
+            <input type="text" id="replyto" placeholder="reply-to"><br>
+            Message <br>
+            <textarea id="message" cols="40" rows="8" placeholder="Enter your message"></textarea><br>
+            <button type="button" onclick="sendMail()" id="submit-button">Send</button>
+        </div>
+        <div class="contact-us">
+            <h1>Contact Us</h1>
+            <p style="font-weight: bold;">You can also reach us through the following channels.</p>
+            <p><img src="sources/icons8-home-30.png" alt=""> Izmir Bakırçay Universitesi, Gazi Mustafa Kemal, Kaynaklar
+                Cd., 35665 Menemen/İzmir</p>
+            <p><img src="sources/icons8-phone-32.png" alt=""> 0 (232) 493 00 00</p>
+            <p><img src="sources/icons8-fax-32.png" alt=""> 0 (232) 844 71 22</p>
+            <p><img src="sources/icons8-email-32.png" alt="">info@distopia.com.tr</p>
+
+            <a href="https://www.youtube.com/c/bakircayedu" target="_blank" rel="noopener noreferrer"
+                aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/bakircayedu/" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-facebook" aria-label="meta"></i></a>
+            <a href="https://x.com/bakircayedu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x"
+                    aria-label="x"></i></a>
+            <a href="https://www.instagram.com/bakircayedu/" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-instagram" aria-label="instagram"></i></a>
+            <a href="mailto:info@bakircay.edu.tr" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-solid  fa-envelope" aria-label="e-mail"></i></a>
+        </div>
+        <div>
+            <iframe id="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49902.44636845792!2d26.92249252113092!3d38.58208384867764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbce0d70291201%3A0xc309f7e92ee72bd9!2zxLB6bWlyIEJha8SxcsOnYXkgw5xuaXZlcnNpdGVzaQ!5e0!3m2!1str!2str!4v1735470692253!5m2!1str!2str"
+                width="900" height="600" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2024 DISTOPIA.</p>
+    </footer>
+
+    <script>
+        (function () {
+            emailjs.init("58KVp_Lobm2fsbNxx");
+        })();
+
+        function sendMail() {
+            const parms = {
+                sendername: document.querySelector("#sendername").value,
+                to: document.querySelector("#to").value,
+                subject: document.querySelector("#subject").value,
+                replyto: document.querySelector("#replyto").value,
+                message: document.querySelector("#message").value,
+            };
+
+            const serviceID = "service_55rgfac";
+            const templateID = "template_128imhk";
+
+            emailjs
+                .send(serviceID, templateID, parms)
+                .then((res) => {
+                    alert("Email Sent Successfully!");
+                })
+                .catch((err) => {
+                    console.error("Failed to send email:", err);
+                    alert("Failed to send email. Please try again.");
+                });
+        }
+    </script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
